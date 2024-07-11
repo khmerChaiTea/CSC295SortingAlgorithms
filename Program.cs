@@ -4,7 +4,7 @@ namespace SortingAlgorithms
 {
     public class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             int[] arr1 = { 90, 3, 2, 56, 32, 34, 65, 68, 76, 1, 0, 100, 8 };
             PrintArray(arr1);
@@ -21,24 +21,32 @@ namespace SortingAlgorithms
             Console.WriteLine();
         }
 
-        public static Array BubbleSort(int[] arrToSort)
+        public static int BubbleSort(int[] arrToSort)
         {
+            int totalOuterIterations = 0;
             int temp;
-            for (int i = 0; i < arrToSort.Length - 1; i++)          // how many times it's going through unsorted array
+            // Overall O(n^2) runtime - Big O
+            // Big Omega - O(n^2)
+            for (int i = 0; i < arrToSort.Length - 1; i++) // O(n) how many times we need to go though the unsorted array
             {
-                for (int j = 0; j < arrToSort.Length - 1 - i; j++)
+                totalOuterIterations++;
+                int swaps = 0;
+                for (int j = 0; j < arrToSort.Length - 1 - i; j++)  // O(n)
                 {
-                    // need to swap
-                    if (arrToSort[j] > arrToSort[j + 1])
+                    // we need to swap
+                    if (arrToSort[j] > arrToSort[j + 1])           // can modify if '>' change to '<'
                     {
-                        temp = j;
+                        swaps++;
+                        temp = arrToSort[j];
                         arrToSort[j] = arrToSort[j + 1];
                         arrToSort[j + 1] = temp;
                     }
                 }
+
+                if (swaps == 0) break; // break out of the for loop
             }
 
-            return arrToSort;
+            return totalOuterIterations;
         }
     }
 }
