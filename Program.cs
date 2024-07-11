@@ -10,6 +10,10 @@ namespace SortingAlgorithms
             PrintArray(arr1);
             BubbleSort(arr1);
             PrintArray(arr1);
+            int[] arr2 = { 90, 3, 2, 56, 32, 34, 65, 68, 76, 1, 0, 100, 8 };
+            PrintArray(arr2);
+            SelectionSort(arr2);
+            PrintArray(arr2);
         }
 
         public static void PrintArray(int[] arr)
@@ -47,6 +51,34 @@ namespace SortingAlgorithms
             }
 
             return totalOuterIterations;
+        }
+
+        public static void SelectionSort(int[] arrToSort)
+        {
+            // minIndex keeps track of the smallest index in each iteration
+            // temp is used as temporary storage
+            int minIndex, temp;
+
+            // O(n) how many times we need to go though the unsorted array
+            for (int i = 0; i < arrToSort.Length; i++)
+            {
+                minIndex = i; // set the minIdex equal to current smallest index
+                for (int j = i; j < arrToSort.Length; j++) // loop through each element starting at i
+                {
+                    // if the element is smaller than the current minIndex
+                    if (arrToSort[j] < arrToSort[minIndex])
+                    {
+                        // swap
+                        minIndex = j;
+                    }
+                }
+
+                // swap elements
+                // swap current i (which is smallest position with the smallest/min element)
+                temp = arrToSort[i];
+                arrToSort[i] = arrToSort[minIndex];
+                arrToSort[minIndex] = temp;
+            }
         }
     }
 }
