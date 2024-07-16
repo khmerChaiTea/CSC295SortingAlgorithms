@@ -7,15 +7,20 @@ namespace SortingAlgorithms
         static void Main(string[] args)
         {
             int[] arr1 = { 90, 3, 2, 56, 32, 34, 65, 68, 76, 1, 0, 100, 8 };
+            int[] arrSorted1 = { 0, 1, 2, 3, 8, 32, 34, 56, 65, 68, 76, 90, 100 };
             PrintArray(arr1);
             BubbleSort(arr1);
             PrintArray(arr1);
+
             int[] arr2 = { 90, 3, 2, 56, 32, 34, 65, 68, 76, 1, 0, 100, 8 };
+            int[] arrSorted2 = { 0, 1, 2, 3, 8, 32, 34, 56, 65, 68, 76, 90, 100 };
             PrintArray(arr2);
             SelectionSort(arr2);
             PrintArray(arr2);
+
             Console.WriteLine();
-            int[] arr3 = { 6, 1, 7, 4, 2, 9, 8, 5, 3 };
+            int[] arr3 = { 90, 3, 2, 56, 32, 34, 65, 68, 76, 1, 0, 100, 8 };
+            int[] arrSorted3 = { 0, 1, 2, 3, 8, 32, 34, 56, 65, 68, 76, 90, 100 };
             PrintArray(arr3);
             InsertionSort(arr3);
             PrintArray(arr3);
