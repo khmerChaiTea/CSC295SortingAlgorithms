@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace SortingAlgorithms
 {
@@ -7,23 +8,29 @@ namespace SortingAlgorithms
         static void Main(string[] args)
         {
             int[] arr1 = { 90, 3, 2, 56, 32, 34, 65, 68, 76, 1, 0, 100, 8 };
-            int[] arrSorted1 = { 0, 1, 2, 3, 8, 32, 34, 56, 65, 68, 76, 90, 100 };
-            PrintArray(arr1);
-            BubbleSort(arr1);
-            PrintArray(arr1);
-
             int[] arr2 = { 90, 3, 2, 56, 32, 34, 65, 68, 76, 1, 0, 100, 8 };
-            int[] arrSorted2 = { 0, 1, 2, 3, 8, 32, 34, 56, 65, 68, 76, 90, 100 };
-            PrintArray(arr2);
-            SelectionSort(arr2);
-            PrintArray(arr2);
-
-            Console.WriteLine();
             int[] arr3 = { 90, 3, 2, 56, 32, 34, 65, 68, 76, 1, 0, 100, 8 };
+            int[] arrSorted1 = { 0, 1, 2, 3, 8, 32, 34, 56, 65, 68, 76, 90, 100 };
+            int[] arrSorted2 = { 0, 1, 2, 3, 8, 32, 34, 56, 65, 68, 76, 90, 100 };
             int[] arrSorted3 = { 0, 1, 2, 3, 8, 32, 34, 56, 65, 68, 76, 90, 100 };
-            PrintArray(arr3);
-            InsertionSort(arr3);
-            PrintArray(arr3);
+
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            InsertionSort(arr1);
+            stopwatch.Stop();
+            Console.WriteLine($"Elapsed time for Insertion Sort: {stopwatch.ElapsedMilliseconds}");
+
+            stopwatch.Restart();
+            stopwatch.Start();
+            BubbleSort(arr2);
+            stopwatch.Stop();
+            Console.WriteLine($"Elapsed time for Bubble Sort: {stopwatch.ElapsedMilliseconds}");
+
+            stopwatch.Restart();
+            stopwatch.Start();
+            SelectionSort(arr3);
+            stopwatch.Stop();
+            Console.WriteLine($"Elapsed time for Selection Sort: {stopwatch.ElapsedMilliseconds}");
         }
 
         public static void PrintArray(int[] arr)
