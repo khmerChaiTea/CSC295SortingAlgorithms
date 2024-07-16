@@ -14,6 +14,7 @@ namespace SortingAlgorithms
             PrintArray(arr2);
             SelectionSort(arr2);
             PrintArray(arr2);
+            Console.WriteLine();
             int[] arr3 = { 6, 1, 7, 4, 2, 9, 8, 5, 3 };
             PrintArray(arr3);
             InsertionSort(arr3);
@@ -32,7 +33,9 @@ namespace SortingAlgorithms
         public static void InsertionSort(int[] arr)
         {
             // A for loop to iterate the array to sort the elements
-            for (int i = 1; i < arr.Length; i++)
+            // Overall worst case scenario O(n ^ 2)
+            // Best case scenario O(n)
+            for (int i = 1; i < arr.Length; i++)    // O(n) <--- O(n - 1)
             {
                 // Temporary store an elements in the 'temp' variable
                 int temp = arr[i];
@@ -43,11 +46,13 @@ namespace SortingAlgorithms
 
                 // If out prior element is greater than our stored ('temp') element
                 // and we have not reached the end of the array
-                while (arr[priorIndex] > temp && priorIndex >= 0)
+                while (priorIndex >= 0 && arr[priorIndex] > temp)   // O(n)
                 {
                     arr[priorIndex + 1] = arr[priorIndex];
                     priorIndex--;
                 }
+
+                arr[priorIndex + 1] = temp;
 
             }
             Console.WriteLine();
