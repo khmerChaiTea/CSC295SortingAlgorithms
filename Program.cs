@@ -18,19 +18,19 @@ namespace SortingAlgorithms
             stopwatch.Start();
             InsertionSort(arr1);
             stopwatch.Stop();
-            Console.WriteLine($"Elapsed time for Insertion Sort: {stopwatch.ElapsedMilliseconds}");
+            Console.WriteLine($"Elapsed time for Insertion Sort: {stopwatch.ElapsedTicks}");
 
             stopwatch.Restart();
             stopwatch.Start();
             BubbleSort(arr2);
             stopwatch.Stop();
-            Console.WriteLine($"Elapsed time for Bubble Sort: {stopwatch.ElapsedMilliseconds}");
+            Console.WriteLine($"Elapsed time for Bubble Sort: {stopwatch.ElapsedTicks}");
 
             stopwatch.Restart();
             stopwatch.Start();
             SelectionSort(arr3);
             stopwatch.Stop();
-            Console.WriteLine($"Elapsed time for Selection Sort: {stopwatch.ElapsedMilliseconds}");
+            Console.WriteLine($"Elapsed time for Selection Sort: {stopwatch.ElapsedTicks}");
         }
 
         public static void PrintArray(int[] arr)
